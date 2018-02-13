@@ -1,4 +1,4 @@
 .container
   .span {{key}}
   .span {{keyVal}}
-  input(type='text', v-on:keyup='logIt', @keydown.tab='logIt', value=keyVal)
+  input(type='text', v-on:keyup='logIt', v-on:keypress='logIt', value=keyVal)
