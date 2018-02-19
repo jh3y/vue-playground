@@ -1,4 +1,2 @@
 #app
-  img(src="./assets/logo.png")
-  h2 This is interesting
-  key
+  key(v-for='e in keyed', :code='e.key.trim() === "" ? e.code : e.key', :value='e.which', :event='e.type')
