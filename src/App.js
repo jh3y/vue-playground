@@ -5,6 +5,7 @@ export default {
   data: function () {
     return {
       keyed: [],
+      showLog: true,
       typeFilters: {
         keypress: true,
         keyup: false,
@@ -59,6 +60,9 @@ export default {
       this[`${dataset.type}Filters`][id] = checked
       if (dataset.type === 'type')
         window[typeFilters[id] ? 'addEventListener' : 'removeEventListener'](id, log)
+    },
+    toggleLog: function(e) {
+      this.showLog = e.target.checked
     }
   },
   created: function () {
