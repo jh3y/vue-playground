@@ -1,5 +1,8 @@
 #app
   .logged
-    Key(v-for='e in keyed', :code='e.key.trim() === "" ? e.code : e.key', :value='e.which', :event='e.type')
+    h1(v-if='!keyed.length') Start smashing those keys
+    Key(v-for='e in keyed', :value='e.key.trim() === "" ? e.code : e.key', :code='e.which', :event='e.type')
   .filters
-    KeyFilter(v-for='(value, key) in typeFilters', :label='key', :active='value', :toggle='toggleFilter')
+    KeyFilter(v-for='(value, key) in typeFilters', :label='key', :active='value', :toggle='toggleFilter', type='type')
+    KeyFilter(v-for='(value, key) in valueFilters', :label='key', :active='value', :toggle='toggleFilter', type='value')
+  button(@click='clear') Clear
