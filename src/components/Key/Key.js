@@ -1,4 +1,4 @@
 export default {
-  name: 'key',
+  name: 'Key',
   props: ['code', 'value', 'event']
 }

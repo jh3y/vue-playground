@@ -1,2 +1,5 @@
 #app
-  key(v-for='e in keyed', :code='e.key.trim() === "" ? e.code : e.key', :value='e.which', :event='e.type')
+  .logged
+    Key(v-for='e in keyed', :code='e.key.trim() === "" ? e.code : e.key', :value='e.which', :event='e.type')
+  .filters
+    KeyFilter(v-for='(value, key) in typeFilters', :label='key', :active='value', :toggle='toggleFilter')
